@@ -43,3 +43,9 @@ If there is a `+route.*`, it will pass the Request to the default and expect a R
 export default (req: Request) => {
   return Response();
 };
+```
+
+Routing is done according to [Hono](https://hono.dev/api/routing), but some characters must be escaped.
+https://kit.svelte.dev/docs/advanced-routing#encoding
+
+## Middleware

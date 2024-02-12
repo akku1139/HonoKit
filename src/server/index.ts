@@ -2,18 +2,9 @@ import { Hono } from 'hono';
 
 const root = "/src/routes";
 
-/// SvelteKit風なルーティングをHono風なルーティングに変換する
-// とりあえずフラットにルートを作るようにするけど
-// routeを入れ後にしたほうが良さそうならディレクトリごとで回す
-/* 最下位
-src/routes/[...catchall]/+page.svelte
-src/routes/[[a=x]]/+page.svelte
-src/routes/[b]/+page.svelte
-src/routes/foo-[c]/+page.svelte
-src/routes/foo-abc/+page.svelte
-一位
-*/
-export function createApp() {
+// SvelteKit互換ルーティングはやめてHonoネイティブに
+// : はWindowsのPathに使えないらしいから[]で囲む
+export function createApp(): Hono {
   const routes: Record<string, object> = import.meta.glob(root+"/**/+*.(js|ts)", {
     eager: true,
   });
@@ -25,4 +16,6 @@ export function createApp() {
     // ["api", "notes", "create", "+POST.js"]
     app[/(.+)\.(js|ts)/.exec([].at(-1).toLowerCase)]("いい感じに再構築したルート", route[file]["default"]);
   });
+
+  return app;
 }
