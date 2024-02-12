@@ -1,12 +1,13 @@
 /** @type { import("eslint").Linter.Config } */
 module.exports = {
   rules: {
-    semi: ["error", "always"],
+    "semi": ["error", "always"],
     "comma-dangle": ["error", "always-multiline"],
     "no-else-return": ["error", {allowElseIf: false}],
     "no-lonely-if": "error",
     "no-tabs": "error",
     "eol-last": ["error", "always"],
+    "no-anonymous-default-export": ["error"],
   },
   root: true,
   extends: [
