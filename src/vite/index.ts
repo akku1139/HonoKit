@@ -1,9 +1,12 @@
 import type { Plugin } from 'vite';
 
-export default function honokit(): Plugin {
+type Options = {
+
+};
+
+export default function honokit(options?: Options): Plugin {
   return {
     name: "HonoKit",
-    enforce: 'pre',
-
-  }
+    // enforce: 'pre',
+  };
 };

@@ -11,7 +11,7 @@ Framework for Hono like SvelteKit.
 |  |  |- +GET.ts
 |  |- static
 |  |  |- favicon.png
-|  |- server.js
+|  |- server.ts
 |- package.json
 |- tsconfig.json
 |- vite.config.ts
@@ -37,3 +37,9 @@ export default (c) => {
   return c.json({ message: 'Hello!' });
 };
 ```
+
+If there is a `+route.*`, it will pass the Request to the default and expect a Response to come back.
+```ts
+export default (req: Request) => {
+  return Response();
+};
