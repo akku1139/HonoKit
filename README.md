@@ -9,6 +9,9 @@ Framework for Hono like SvelteKit.
 |  |  |- index.ts
 |  |- routes
 |  |  |- +GET.ts
+|  |- static
+|  |  |- favicon.png
+|  |- server.js
 |- package.json
 |- tsconfig.json
 |- vite.config.ts
