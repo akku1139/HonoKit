@@ -1,0 +1,24 @@
+# EditorConfig helps developers define and maintain consistent
+# coding styles between different editors and IDEs
+# editorconfig.org
+
+root = true
+
+
+[*]
+
+# Change these settings to your own preference
+# editor.insertSpaces
+indent_style = space
+# editor.tabSize
+indent_size = 2
+
+# We recommend you to keep these unchanged
+# files.eol
+end_of_line = lf
+# files.encoding
+charset = utf-8
+# files.trimTrailingWhitespace
+trim_trailing_whitespace = true
+# files.insertFinalNewline
+insert_final_newline = true
