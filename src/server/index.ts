@@ -23,6 +23,6 @@ export function createApp() {
   Object.keys(routes).forEach((file) =>{
     file.replace(root, "").split("/").filter((e) => Boolean(e));
     // ["api", "notes", "create", "+POST.js"]
-    [].at(-1);
+    app[/(.+)\.(js|ts)/.exec([].at(-1).toLowerCase)]("いい感じに再構築したルート", route[file]["default"]);
   });
 }
