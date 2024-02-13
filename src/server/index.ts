@@ -25,6 +25,7 @@ export function createApp(): Hono {
 // https://kit.svelte.dev/docs/advanced-routing#encoding
 // [[[x+2a][u+d83e][u+dd2a]] -> [[*🤪
 // 入力の末尾に ] があったらreturnでは消えるけど、 [x+5d] として渡されるはずなので問題ない。
+// 嘘: [route] が route になる
 function replaceEncode(str: string): string {
   return str.split("]").filter(Boolean).map((e)=>e.replace("[", ""))
     .map((e) =>
